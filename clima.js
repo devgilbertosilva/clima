@@ -40,24 +40,35 @@
       select.appendChild(option);
     });
 
-    // ===========================
-    // Função para mapear o weathercode
-    // ===========================
-    function getWeatherCard(code, temp) {
-      let card = { class: "cloudy", titulo: "☁️ Nublado", descricao: "Céu encoberto." };
+function getWeatherCard(code, temp) {
+  let card = { class: "cloudy", titulo: "☁️ Nublado", descricao: "Céu encoberto." };
 
-      if (code === 0) card = { class: "sunny", titulo: "☀️ Ensolarado", descricao: "Dia limpo e ensolarado." };
-      else if ([1,2].includes(code)) card = { class: "partly-cloudy", titulo: "🌤️ Parcialmente Nublado", descricao: "Algumas nuvens no céu." };
-      else if (code === 3) card = { class: "cloudy", titulo: "☁️ Nublado", descricao: "Céu totalmente encoberto." };
-      else if ([45,48].includes(code)) card = { class: "foggy", titulo: "🌫️ Névoa", descricao: "Visibilidade reduzida." };
-      else if ((code >= 51 && code <= 67) || (code >= 61 && code <= 65)) card = { class: "rainy", titulo: "🌦️ Chuva", descricao: "Chuvas previstas." };
-      else if ((code >= 71 && code <= 77) || [85,86].includes(code)) card = { class: "snowy", titulo: "❄️ Neve", descricao: "Neve caindo, cuidado nas estradas." };
-      else if (code >= 80 && code <= 82) card = { class: "rainy", titulo: "🌧️ Pancadas de Chuva", descricao: "Chuvas rápidas e fortes." };
-      else if (code >= 95 && code <= 99) card = { class: "stormy", titulo: "🌩️ Tempestade", descricao: "Trovoadas intensas, cuidado!" };
-      else if (temp <= 10) card = { class: "cold", titulo: "🧊 Frio Intenso", descricao: "Agasalhe-se bem!" };
+  if (code === 0) {
+    card = { class: "sunny", titulo: "☀️ Ensolarado", descricao: "Dia limpo e ensolarado." };
+  } else if ([1,2].includes(code)) {
+    card = { class: "partly-cloudy", titulo: "🌤️ Parcialmente Nublado", descricao: "Algumas nuvens no céu." };
+  } else if (code === 3) {
+    card = { class: "cloudy", titulo: "☁️ Nublado", descricao: "Céu totalmente encoberto." };
+  } else if ([45,48].includes(code)) {
+    card = { class: "foggy", titulo: "🌫️ Névoa", descricao: "Visibilidade reduzida." };
+  } else if ((code >= 51 && code <= 67) || (code >= 61 && code <= 65)) {
+    card = { class: "rainy", titulo: "🌦️ Chuva", descricao: "Chuvas previstas." };
+  } else if ((code >= 71 && code <= 77) || [85,86].includes(code)) {
+    card = { class: "snowy", titulo: "❄️ Neve", descricao: "Neve caindo, cuidado nas estradas." };
+  } else if (code >= 80 && code <= 82) {
+    card = { class: "rainy", titulo: "🌧️ Pancadas de Chuva", descricao: "Chuvas rápidas e fortes." };
+  } else if (code >= 95 && code <= 99) {
+    card = { class: "stormy", titulo: "🌩️ Tempestade", descricao: "Trovoadas intensas, cuidado!" };
+  }
 
-      return card;
-    }
+  // Temperatura extrema sobrepõe se frio intenso
+  if (temp <= 10) {
+    card = { class: "cold", titulo: "🧊 Frio Intenso", descricao: "Agasalhe-se bem!" };
+  }
+
+  return card;
+}
+
 
     // ===========================
     // Buscar clima

@@ -64,42 +64,43 @@
       font-size: 1.4rem;
     }
 
-    /* Gradientes para cada tipo de clima */
-    .sunny {
-      background: linear-gradient(135deg, #f9d423, #ff4e50);
-    }
+   .sunny {
+  background: linear-gradient(135deg, #FFD200, #FF7300); /* Amarelo intenso para sol */
+}
 
-    .partly-cloudy {
-      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
-      color: #333;
-    }
+.partly-cloudy {
+  background: linear-gradient(135deg, #FFEE93, #90CAF9); /* Céu com nuvens e sol */
+  color: #333;
+}
 
-    .cloudy {
-      background: linear-gradient(135deg, #757f9a, #d7dde8);
-      color: #333;
-    }
+.cloudy {
+  background: linear-gradient(135deg, #90A4AE, #607D8B); /* Cinza mais escuro */
+  color: #fff;
+}
 
-    .foggy {
-      background: linear-gradient(135deg, #bdc3c7, #2c3e50);
-    }
+.foggy {
+  background: linear-gradient(135deg, #E0E0E0, #B0BEC5); /* Cinza claro */
+  color: #333;
+}
 
-    .rainy {
-      background: linear-gradient(135deg, #00c6ff, #0072ff);
-    }
+.rainy {
+  background: linear-gradient(135deg, #4FC3F7, #0288D1); /* Azul forte de chuva */
+}
 
-    .snowy {
-      background: linear-gradient(135deg, #83a4d4, #b6fbff);
-      color: #003366;
-    }
+.snowy {
+  background: linear-gradient(135deg, #E0F7FA, #80DEEA); /* Azul gelo */
+  color: #003366;
+}
 
-    .stormy {
-      background: linear-gradient(135deg, #141e30, #243b55);
-    }
+.stormy {
+  background: linear-gradient(135deg, #4A148C, #311B92); /* Roxo escuro de tempestade */
+}
 
-    .cold {
-      background: linear-gradient(135deg, #00BFFF, #E0F7FA);
-      color: #003366;
-    }
+.cold {
+  background: linear-gradient(135deg, #00BFFF, #1E88E5); /* Azul frio intenso */
+  color: #fff;
+}
+
 
 
 
